@@ -426,6 +426,56 @@
         }
     </style>
 </head>
+<!-- Chat Widget -->
+<style>
+  #chatWidgetButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  #chatWidgetFrame {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 400px;
+    height: 600px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 9998;
+  }
+</style>
+
+<div id="chatWidgetButton">💬</div>
+
+<iframe 
+  id="chatWidgetFrame"
+  src="https://simple-claude-chat.vercel.app/"
+></iframe>
+
+<script>
+  const btn = document.getElementById("chatWidgetButton");
+  const frame = document.getElementById("chatWidgetFrame");
+
+  btn.addEventListener("click", () => {
+    frame.style.display = frame.style.display === "none" ? "block" : "none";
+  });
+</script>
+<!-- End Chat Widget -->
 
 <body>
     <!-- Header -->
